@@ -21,9 +21,9 @@ if(!y){e=0;break}
 else if(y==1)D[s++]=(P[x-1]<<24)>>24
 else if(y==2)D[s++]=P[x-4]|P[x-3]<<8|P[x-2]<<16|P[x-1]<<24
 else if(y==3)s--
-else if(y==4){D[s]=D[s-1];s++}
+else if(y==4)D[s]=D[s-1],s++
 else if(y==5){const z=D[s-1];D[s-1]=D[s-2];D[s-2]=z}
-else if(y==6){D[s]=D[s-2];s++}
+else if(y==6)D[s]=D[s-2],s++
 else if(y==7){const z=D[s-3];D[s-3]=D[s-2];D[s-2]=D[s-1];D[s-1]=z}
 else if(y==23||y==27)D[s-1]=y==23?-D[s-1]|0:~D[s-1]
 else if(y>15&&y<35){const b=D[s-1],a=D[s-2];if(y>18&&y<23&&!b){e=4;break}s-=2;D[s++]=F[y-16](a,b)}
